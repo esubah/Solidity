@@ -3,9 +3,9 @@ pragma solidity ^0.5.0;
 // lvl 1: equal split
 contract AssociateProfitSplitter {
     // @TODO: Create three payable addresses representing `employee_one`, `employee_two` and `employee_three`.
-    address payable employee_one = 0x0949300276c03ef092a32cAB1F9166beBb0b7BF9;
-    address payable employee_two = 0xDb94d2d658619c761976af786FC51C516F4AaA33;
-    address payable employee_three = 0x76c9d2ea61543655A89f2aE5DAbD4dC74F2651Ee;
+    address payable employee_one;
+    address payable employee_two;
+    address payable employee_three;
 
     constructor(address payable _one, address payable _two, address payable _three) public {
         employee_one = _one;
@@ -33,8 +33,9 @@ contract AssociateProfitSplitter {
     }
 
     function() external payable {
+        deposit();
         // @TODO: Enforce that the `deposit` function is called in the fallback function!
         // Your code here!
-        deposit()
+        
     }
 }
